@@ -1,11 +1,15 @@
-ask;lsakf;ldksf;ldskfa;lksd;sdkfsdkf;lk;flkf;dkf;fk;
-sad;k;saldkfs;'ldfks;dlafk;lsksl;'dafk;dsakf;l'dkf;'alskdf
-a;sfdk'falsdk;lfak;'fakfla;k';fkds;'kf;sdkfa;skd;
-
-
-
-
-
-a'ds;fk;sadk;'lfkf;'lka';fksda';kf'sa;kfds;lak;fak;kfsa;'kf;sa'dk'///               salp[qweor[pweopposd[fo
-
-        sdf'dfsf    ewqw    dfdsf   ]]]
+The DNS filtering apparatus of China’s Great Firewall
+(GFW) has evolved considerably over the past two decades.
+However, most prior studies of China’s DNS filtering were performed over short time periods, leading to unnoticed changes
+in the GFW’s behavior. In this study, we introduce GFWatch,
+a large-scale, longitudinal measurement platform capable of
+testing hundreds of millions of domains daily, enabling continuous monitoring of the GFW’s DNS filtering behavior.
+We present the results of running GFWatch over a ninemonth period, during which we tested an average of 411M
+domains per day and detected a total of 311K domains censored by GFW’s DNS filter. To the best of our knowledge, this
+is the largest number of domains tested and censored domains
+discovered in the literature. We further reverse engineer regular expressions used by the GFW and find 41K innocuous
+domains that match these filters, resulting in overblocking
+of their content. We also observe bogus IPv6 and globally
+routable IPv4 addresses injected by the GFW, including addresses owned by US companies, such as Facebook, Dropbox,
+and Twitter.
+Using data
