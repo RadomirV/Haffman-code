@@ -17,7 +17,8 @@ int main()
     //sgfd
     cout << s << endl;
     int ix = 0;
+    //comcommit 1
     //while (s[ix] != ',')
-    
+
     return 0;
 }
