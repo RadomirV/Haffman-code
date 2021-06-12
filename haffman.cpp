@@ -9,6 +9,12 @@ using namespace std;
 
 int main()
 {
+    return 0;
+}
+
+/*
+int main()
+{
     ifstream graph("C:\\Users\\12\\Desktop\\c_labs\\My_files\\Graf.txt");
     string s; //[10000];
     int number_of_vertex = 0;
@@ -24,3 +30,4 @@ int main()
 
     return 0;
 }
+*/
