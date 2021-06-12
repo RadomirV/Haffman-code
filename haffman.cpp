@@ -6,13 +6,24 @@
 #include <cstring>
 #include <fstream>
 using namespace std;
-/*
+
+
+
+
+
 int main()
 {
+    
     return 0;
 }
-*/
 
+
+
+
+
+
+
+/*
 int main()
 {
     ifstream text;
@@ -21,8 +32,14 @@ int main()
     int werew = 0;
     int text_size = 0;
     while (!text.eof())
+    {
         text_size++;
+        text.get();
+    }
+
     char str[text_size];
+    for (int i = 0; i < text_size; i++)
+        str[i] = 0;
     text >> str;
 
     for (int i = 0; i < text_size; i++)
@@ -33,10 +50,11 @@ int main()
         s = text.get();
         cout << s[ix];
         ix++;
-    }*/
+    }
     //comcommit 1
     //while (s[ix] != ',')
     //git commit 20:02
 
     return 0;
 }
+*/
