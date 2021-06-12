@@ -9,13 +9,14 @@ using namespace std;
 
 
 
-
+/*
 
 int main()
 {
-    
+
     return 0;
 }
+*/
 
 
 
@@ -23,7 +24,6 @@ int main()
 
 
 
-/*
 int main()
 {
     ifstream text;
@@ -37,7 +37,7 @@ int main()
         text.get();
     }
 
-    char str[text_size];
+    unsigned char str[text_size];
     for (int i = 0; i < text_size; i++)
         str[i] = 0;
     text >> str;
@@ -50,11 +50,11 @@ int main()
         s = text.get();
         cout << s[ix];
         ix++;
-    }
+    }*/
     //comcommit 1
     //while (s[ix] != ',')
     //git commit 20:02
 
     return 0;
 }
-*/
+
