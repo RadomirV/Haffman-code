@@ -20,6 +20,7 @@ int main()
     int werew = 0;
     //comcommit 1
     //while (s[ix] != ',')
+    //git commit 20:02
 
     return 0;
 }
