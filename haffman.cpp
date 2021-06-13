@@ -19,6 +19,26 @@ public:
     Node(Node *, Node *);
     ~Node();
 };
+Node::Node()
+{
+    key = 0;
+    s = ' ';
+    left = nullptr;
+    right = nullptr;
+} /// default constructor
+
+Node::Node(char s, int key)
+{
+    s = s;
+    key = key;
+    left = nullptr;
+    right = nullptr;
+}
+Node::~Node()
+{
+    delete[] left;
+    delete[] right;
+}
 
 void tree_go(Node *);
 
