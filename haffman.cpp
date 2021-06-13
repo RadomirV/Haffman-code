@@ -23,22 +23,22 @@ Node::Node()
 {
     key = 0;
     s = ' ';
-    left = nullptr;
-    right = nullptr;
+    left = NULL;
+    right = NULL;
 } /// default constructor
 
 Node::Node(char s, int key)
 {
     s = s;
     key = key;
-    left = nullptr;
-    right = nullptr;
+    left = NULL;
+    right = NULL;
 }
 Node::~Node()
 {
     delete[] left;
     delete[] right;
-    
+
 }
 
 void tree_go(Node *);
