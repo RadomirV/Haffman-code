@@ -38,6 +38,7 @@ Node::~Node()
 {
     delete[] left;
     delete[] right;
+    
 }
 
 void tree_go(Node *);
