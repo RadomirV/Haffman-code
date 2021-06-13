@@ -7,12 +7,11 @@
 #include <fstream>
 using namespace std;
 
-
 class Node
 {
 public:
-    char s_;            ///symbol
-    int key_;           /// amount symbols
+    char s;             ///symbol
+    int key;            /// amount symbols
     Node *left, *right; ///pointers on left_ and right_
 
     Node();
@@ -22,7 +21,14 @@ public:
 };
 
 void tree_go(Node *);
-bool comp(const Node *, const Node *);
+
+bool comp(const Node *c1, const Node *c2)
+{
+    if (c1->key < c2->key)
+        return 1;
+    else
+        return 0;
+}
 
 int main()
 {
