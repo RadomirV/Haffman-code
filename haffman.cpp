@@ -5,15 +5,17 @@
 #include <time.h>
 #include <cstring>
 #include <fstream>
+#include <map>
+#include <vector>
+#include <list>
 using namespace std;
 
 class Node
 {
 public:
-    char s;             ///symbol
-    int key;            /// amount symbols
-    Node *left, *right; ///pointers on left_ and right_
-
+    char s;
+    int key;
+    Node *left, *right;
     Node();
     Node(char, int);
     Node(Node *, Node *);
@@ -25,7 +27,7 @@ Node::Node()
     s = ' ';
     left = NULL;
     right = NULL;
-} /// default constructor
+}
 
 Node::Node(char s, int key)
 {
@@ -38,9 +40,13 @@ Node::~Node()
 {
     delete[] left;
     delete[] right;
-
 }
-
+Node::Node(Node *left, Node *right)
+{
+    key = left->key + right->key; 
+    left = left;
+    right = right;
+}
 void tree_go(Node *);
 
 bool comp(const Node *c1, const Node *c2)
