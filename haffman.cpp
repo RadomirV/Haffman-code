@@ -294,7 +294,7 @@ bool File_compare(char *textway, char *decoded_textway)
 
 int main()
 {
-    char textway[] = "C:\\Users\\12\\Desktop\\c_labs\\haffman\\Long_text.txt";
+    char textway[] = "C:\\Users\\12\\Desktop\\c_labs\\haffman\\haff_text.txt";
     char codedway[] = "C:\\Users\\12\\Desktop\\c_labs\\haffman\\coded_text.txt";
     char decodedway[] = "C:\\Users\\12\\Desktop\\c_labs\\haffman\\decoded_text.txt";
     cout << "start" << endl;
@@ -315,6 +315,36 @@ int main()
     }
 
     cout << "end" << endl;
+    ifstream text(textway, ios::binary);
+    if (text.is_open() == 0)
+    {
+        cout << "can't open codedway";
+        return 0;
+    }
+    ifstream coded(codedway, ios::binary);
+    if (coded.is_open() == 0)
+    {
+        cout << "can't open codedway";
+        return 0;
+    }
+    float ntx = 0;
+    float ncode = 0;
+    char tmp;
+    while (!text.eof())
+    {
+        tmp = text.get();
+        ntx++;
+    }
+    while (!coded.eof())
+    {
+        tmp = coded.get();
+        ncode++;
+    }
+    float compress = ncode / ntx;
+    cout << "compression = " << compress << endl;
+    text.close();
+    coded.close();
+    return 0;
     //k=Code_haffman
 
     return 0;

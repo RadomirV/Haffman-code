@@ -261,7 +261,6 @@ bool ar_decode(char *codedway, char *decodedway)
             }
         }
         decoded << iter->sym;
-        //length--;
     }
 
     coded.close();
