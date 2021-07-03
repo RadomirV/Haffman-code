@@ -1,2 +1,3 @@
-# Haffman-code
-Haffman
+# Haffman-code&Arithmetic
+Haffman& arithmetic
+
