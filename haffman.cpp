@@ -152,7 +152,7 @@ bool Code_haffman(char *textway, char *codedway)
     char curr;
     vector<bool> x;
     int count = 0;
-    //попробовать открыть и закрыть файл
+
     text.close();
     text = ifstream(textway, ios::out | ios::binary);
 
@@ -203,8 +203,8 @@ bool Decode_haffman(char *codedway, char *decodedway)
     {
         coded.read((char *)&s, sizeof(s));
         coded.read((char *)&sym_freq, sizeof(sym_freq));
-        n--;
         table[s] = sym_freq;
+        n--;
     }
 
     list<Node *> llist;
