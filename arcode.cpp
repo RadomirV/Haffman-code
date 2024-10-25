@@ -212,9 +212,9 @@ bool ar_decode(char *codedway, char *decodedway)
     unsigned short l = 0;
     unsigned short h = 65535;
     int delitel = List.back().right;
-    cout << "delitel= " << delitel << endl;
-    cout << "length= " << length << endl;
-    cout << "mod%delitel= " << length % delitel << endl;
+    //cout << "delitel= " << delitel << endl;
+    //cout << "length= " << length << endl;
+    //cout << "mod%delitel= " << length % delitel << endl;
     unsigned short First_qtr = (h + 1) / 4;   //16384
     unsigned short Half = First_qtr * 2;      //32768
     unsigned short Third_qtr = First_qtr * 3; //49152
@@ -304,9 +304,6 @@ int main()
     char decodedway[] = "C:\\Users\\12\\Desktop\\c_labs\\haffman\\decoded_text.txt";
     bool k = ar_code(textway, codedway);
     bool m = ar_decode(codedway, decodedway);
-    bool res = File_compare(textway, decodedway);
-    if (res == 1)
-        cout << "Files equal" << endl;
     ifstream text(textway, ios::binary);
     if (text.is_open() == 0)
     {

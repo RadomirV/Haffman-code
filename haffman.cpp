@@ -172,7 +172,11 @@ bool Code_haffman(char *textway, char *codedway)
             }
         }
     }
-
+    //cout << "count = " << count << endl;
+    if (curr)
+    {
+        codedtext << curr;
+    }
     text.close();
     codedtext.close();
 
@@ -194,7 +198,9 @@ bool Decode_haffman(char *codedway, char *decodedway)
         return 0;
     }
 
-    int n, sym_freq;
+    long int len = 0;
+    int sym_freq;
+    int n;
     char s;
     map<char, int> table;
     map<char, int>::iterator it;
@@ -204,6 +210,7 @@ bool Decode_haffman(char *codedway, char *decodedway)
         coded.read((char *)&s, sizeof(s));
         coded.read((char *)&sym_freq, sizeof(sym_freq));
         table[s] = sym_freq;
+        len = len + sym_freq;
         n--;
     }
 
@@ -232,7 +239,7 @@ bool Decode_haffman(char *codedway, char *decodedway)
     Node *p = root;
     byte = coded.get();
 
-    while (!coded.eof())
+    while ((!coded.eof()) && (len > 0))
     {
         char bit = byte & (1 << (7 - count)); // проверяем что лежит в каждом бите если 1 то идем вправо если 0 то влево
         if (bit)
@@ -246,6 +253,7 @@ bool Decode_haffman(char *codedway, char *decodedway)
         if (p->left == NULL && p->right == NULL)
         {
             decoded << p->s;
+            len--;
             p = root;
         }
         count++;
@@ -304,6 +312,7 @@ int main()
     if (res == 1)
         cout << "text and decoded text are equal" << endl;
     map<char, vector<bool>>::iterator it;
+    /*
     for (it = code.begin(); it != code.end(); it++)
     {
         cout << it->first << ": ";
@@ -313,6 +322,7 @@ int main()
         }
         cout << endl;
     }
+    */
 
     cout << "end" << endl;
     ifstream text(textway, ios::binary);
@@ -335,6 +345,7 @@ int main()
         tmp = text.get();
         ntx++;
     }
+
     while (!coded.eof())
     {
         tmp = coded.get();
@@ -342,6 +353,60 @@ int main()
     }
     float compress = ncode / ntx;
     cout << "compression = " << compress << endl;
+    /*
+    map<char, vector<bool>>::iterator itt;
+    long int max = 0;
+    for (itt = code.begin(); itt != code.end(); itt++)
+    {
+
+        max = max + itt->second.size();
+    }
+    cout << "max=  = " << max << endl;
+    text.close();
+    text = ifstream(textway, ios::out | ios::binary);
+    if (text.is_open() == 0)
+    {
+        cout << "can't open codedway";
+        return 0;
+    }
+    map<char, int> table;
+    map<char, int>::iterator iterr;
+    char s;
+    while (!text.eof())
+    {
+        s = text.get();
+        table[s]++;
+    }
+    text.close();
+    text = ifstream(textway, ios::out | ios::binary);
+    if (text.is_open() == 0)
+    {
+        cout << "can't open codedway";
+        return 0;
+    }
+    long int maxbit = 0;
+    itt = code.begin();
+    for (iterr = table.begin(); iterr != table.end(); iterr++)
+    {
+        maxbit = maxbit + (iterr->second) * (itt->second.size());
+        itt++;
+    }
+    cout << "maxbit = " << maxbit << endl;
+    ifstream decoded(decodedway, ios::binary);
+    if (coded.is_open() == 0)
+    {
+        cout << "can't open codedway";
+        return 0;
+    }
+    float sizedec = 0;
+    while (!decoded.eof())
+    {
+        tmp = decoded.get();
+        sizedec++;
+    }
+    cout << "sizedec = " << sizedec << endl;
+    cout << "size text = " << ntx << endl;
+    */
     text.close();
     coded.close();
     return 0;
